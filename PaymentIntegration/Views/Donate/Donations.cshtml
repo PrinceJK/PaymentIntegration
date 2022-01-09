@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Donations";
-    var transactionsList = ViewData["transactionsList"];
+    var transactionsList = ViewData["transactionsList"] as List<TransactionsModel>;
 }
 
 <div>
@@ -10,11 +10,20 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Amount</th>
+                <th>Transaction Reference</th>
             </tr>
         </thead>
         
         <tbody>
-
+            @foreach(var transaction in transactionsList)
+            {
+                <tr>
+                    <td>@transaction.Name</td>
+                    <td>@transaction.Email</td>
+                    <td>@transaction.Amount</td>
+                    <td>@transaction.TrxRef</td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>
