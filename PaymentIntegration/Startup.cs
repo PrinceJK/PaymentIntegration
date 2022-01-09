@@ -27,7 +27,7 @@ namespace PaymentIntegration
         {
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(options =>
-            options.UseNpgsql(Configuration["Payment:PaystackSK"]));
+            options.UseNpgsql(Configuration["ConnectionStrings:default"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
