@@ -55,7 +55,7 @@ namespace PaymentIntegration.Controllers
                 };
                 await _context.Transactions.AddAsync(transaction);
                 await _context.SaveChangesAsync();
-                Redirect(response.Data.AuthorizationUrl);
+                return Redirect(response.Data.AuthorizationUrl);
             }
             ViewData["error"] = response.Message;
             return View();
